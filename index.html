@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cotizador Convenio Marco</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- PapaParse para leer CSV -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Cotizador Convenio Marco</h1>
+    <p>Seleccione productos y arme su cotización por proveedor.</p>
+  </header>
+
+  <section class="filters">
+    <input id="q" type="search" placeholder="Buscar (Producto, Marca, Tipo)..." />
+    <select id="f_proveedor"><option value="">Proveedor (todos)</option></select>
+    <select id="f_region"><option value="">Región (todas)</option></select>
+    <select id="f_marca"><option value="">Marca (todas)</option></select>
+  </section>
+
+  <section id="list"></section>
+
+  <aside id="cart">
+    <h2>Carrito</h2>
+    <div id="cart-items"></div>
+    <div id="cart-totals"></div>
+    <button id="btn-cotizar">Generar cotización</button>
+  </aside>
+
+  <template id="tpl-item">
+    <div class="item">
+      <div class="left">
+        <img class="img" src="" alt="" />
+        <div class="meta">
+          <div class="name"></div>
+          <div class="small">
+            <span class="tag marca"></span>
+            <span class="tag tipo"></span>
+            <span class="tag region"></span>
+            <span class="tag proveedor"></span>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <input type="number" min="1" step="1" class="qty" value="1" />
+        <button class="add">Agregar</button>
+      </div>
+    </div>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
