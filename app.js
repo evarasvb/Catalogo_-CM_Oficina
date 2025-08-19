@@ -257,7 +257,7 @@ th { background:#ddd; }
     }
     html += '<p>Gracias por su compra. Por favor envíe esta cotización al proveedor correspondiente para generar la orden de compra.</p>';
     // Información de contacto presentada de manera discreta al final de la cotización. Puede modificar los datos de contacto aquí si cambian.
-    html += '<p style="font-size:12px; color:#555;">Contacto: Enrique Varas B. – 229059577 – <a href="mailto:contacto@firmavb.cl">contacto@firmavb.cl</a> | Mary Carmen de La Barre – +569&nbsp;2896&nbsp;3160 – <a href="mailto:cm@firmavb.cl">cm@firmavb.cl</a></p>';
+    html += '<p style="font-size:12px; color:#555;">Contacto: Enrique Varas B. – 229059577 – <a href="mailto:contacto@firmavb.cl">contacto@firmavb.cl</a> | Mary Carmen de la Barra D. – +569&nbsp;2896&nbsp;3160 – <a href="mailto:cm@firmavb.cl">cm@firmavb.cl</a></p>';
     html += '</body></html>';
     win.document.write(html);
     win.document.close();
