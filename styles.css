@@ -198,6 +198,22 @@ header p {
   background: #a02a28;
 }
 
+/* Estilo para el logo animado en la esquina superior derecha */
+#logo-video {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 100px;
+  height: auto;
+  z-index: 1010; /* por encima del header y filtros */
+  opacity: 0.8;
+}
+#logo-video video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
 /* Botón de eliminar dentro del carrito */
 .remove-btn {
   background: transparent;
