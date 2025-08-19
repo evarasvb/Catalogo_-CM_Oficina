@@ -31,6 +31,11 @@ import pandas as pd
 from pathlib import Path
 
 # Mapa de cabeceras posibles a nuestro estándar
+#
+# Algunos catálogos usan "PRECIO" mientras que otros utilizan
+# "PRECIO EN TIENDA" para el valor unitario. Ambos se mapean
+# a la columna unificada "Precio". Si aparecen más variantes
+# (por ejemplo, "PRECIO UNITARIO", etc.) se pueden agregar aquí.
 HEADER_MAP = {
     "NOMBRE PROVEEDO": "Proveedor",
     "NOMBRE PROVEEDOR": "Proveedor",
@@ -40,7 +45,9 @@ HEADER_MAP = {
     "TIPO PRODUCTO": "Tipo_Producto",
     "REGION": "Region",
     "MARCA": "Marca",
+    # Mapeamos cualquier columna de precio a la clave estándar "Precio"
     "PRECIO": "Precio",
+    "PRECIO EN TIENDA": "Precio",
     "IMAGEN": "Imagen",
 }
 
