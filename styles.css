@@ -199,19 +199,28 @@ header p {
 }
 
 /* Estilo para el logo animado en la esquina superior derecha */
+/*
+ * Logo animado en la esquina superior derecha.
+ * Ajusta la posición y tamaño para que el video se vea mejor y se mantenga
+ * por encima de todos los demás elementos sin bloquear la interacción.
+ */
 #logo-video {
   position: fixed;
   top: 10px;
   right: 10px;
-  width: 100px;
+  /* Aumentamos el tamaño para que el logo animado sea más visible */
+  width: 150px;
   height: auto;
-  z-index: 1010; /* por encima del header y filtros */
-  opacity: 0.8;
+  z-index: 2000; /* aseguramos que quede sobre el header, filtros y demás */
+  /* Evita que el usuario haga clic accidentalmente sobre el video */
+  pointer-events: none;
+  /* Ajustamos la opacidad para que no sea demasiado intrusivo */
+  opacity: 0.9;
 }
 #logo-video video {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 /* Botón de eliminar dentro del carrito */
