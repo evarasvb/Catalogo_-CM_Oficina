@@ -181,3 +181,32 @@ header p {
 #btn-cotizar:hover {
   background: #2b7dff;
 }
+
+/* Nuevo botón para vaciar el carrito */
+#btn-vaciar {
+  margin-top: 8px;
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 10px;
+  background: #b8312f;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+#btn-vaciar:hover {
+  background: #a02a28;
+}
+
+/* Botón de eliminar dentro del carrito */
+.remove-btn {
+  background: transparent;
+  border: none;
+  color: #ff6b6b;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 6px;
+}
+.remove-btn:hover {
+  color: #ff4c4c;
+}

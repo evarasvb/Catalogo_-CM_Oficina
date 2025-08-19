@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const cartItemsEl = document.getElementById('cart-items');
   const cartTotalsEl = document.getElementById('cart-totals');
   const btnCotizar = document.getElementById('btn-cotizar');
+  const btnVaciar = document.getElementById('btn-vaciar');
 
   let productos = [];
   const cart = {};
@@ -50,6 +51,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderList();
     updateCartUI();
+
+    // Manejar clic en botón "Vaciar carrito"
+    btnVaciar.addEventListener('click', () => {
+      // Verificamos si hay elementos
+      const keys = Object.keys(cart);
+      if (keys.length === 0) return;
+      if (confirm('¿Está seguro de eliminar todos los productos del carrito?')) {
+        keys.forEach(k => delete cart[k]);
+        updateCartUI();
+      }
+    });
   }
 
   function fillSelect(select, items) {
@@ -146,13 +158,25 @@ document.addEventListener('DOMContentLoaded', () => {
         const qty = entry.qty;
         const row = document.createElement('div');
         row.className = 'cart-item';
+        // Nombre del producto (recortado si es muy largo)
         const nameSpan = document.createElement('span');
-        nameSpan.textContent = p.Producto.slice(0, 40);
+        nameSpan.textContent = p.Producto ? p.Producto.slice(0, 40) : '';
         row.appendChild(nameSpan);
+        // Cantidad solicitada
         const qtySpan = document.createElement('span');
         qtySpan.textContent = qty;
         qtySpan.style.textAlign = 'right';
         row.appendChild(qtySpan);
+        // Botón para eliminar este producto del carrito
+        const removeBtn = document.createElement('button');
+        removeBtn.className = 'remove-btn';
+        removeBtn.textContent = '×';
+        removeBtn.addEventListener('click', () => {
+          const keyToRemove = getCartKey(p);
+          delete cart[keyToRemove];
+          updateCartUI();
+        });
+        row.appendChild(removeBtn);
         div.appendChild(row);
         const price = parseFloat(p.Precio);
         if (!isNaN(price)) {
